@@ -9,15 +9,21 @@ class LinkedList
     @tail
   end
 
-  def append(value)
+  def append(value, next_node = nil)
   @size += 1
   @tail = Node.new(value)
   @head = @head ? @head : @tail
   end
 
-  def prepend(value)
+  def prepend(value, next_node = nil)
   @size += 1
-  @head = Node.new(value, 1)
+  if @head
+    temp = @head
+    p Node.new(temp.value,(temp.next_node + 1))
+    @head = Node.new(value, 0)
+  else
+    @head = Node.new(value, 0)
+  end
   @tail = @tail ? @tail : @head
   end
 
@@ -34,6 +40,7 @@ class LinkedList
   end
 
   def at(index)
+    # @head.next_node
   end
 
   def pop
