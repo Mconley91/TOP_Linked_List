@@ -15,14 +15,13 @@ class LinkedList
   @head = @head ? @head : @tail
   end
 
-  def prepend(value, next_node = nil)
+  def prepend(value)
   @size += 1
   if @head
     temp = @head
-    p Node.new(temp.value,(temp.next_node + 1))
-    @head = Node.new(value, 0)
+    @head = Node.new(value, temp)
   else
-    @head = Node.new(value, 0)
+    @head = Node.new(value)
   end
   @tail = @tail ? @tail : @head
   end
@@ -40,7 +39,17 @@ class LinkedList
   end
 
   def at(index)
-    # @head.next_node
+    counter = 0
+    current_node = @head
+    while counter < index do
+      current_node = current_node.next_node
+      counter += 1
+    end
+    if current_node 
+      current_node.value
+    else
+      "No value at index"
+    end
   end
 
   def pop
