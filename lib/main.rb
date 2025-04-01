@@ -23,14 +23,12 @@ def append_list(list)
 end
 
 def read_list(list)
-  puts "List Size: #{list.size}"
-  puts "List Head: #{list.head.value}"
-  puts "List Tail: #{list.tail.value}"
   count = 0
   list.size.times do
-    puts "Number #{count + 1}: #{list.at(count).class == String ? list.at(count) : list.at(count).value}"
+    puts "Number #{count + 1}: #{list.at(count).value}"
     count += 1
   end
+  puts "--------------------"
 end
 
 # prepend_list(myList)
@@ -40,5 +38,4 @@ myList.pop
 myList.pop
 myList.pop
 myList.pop
-puts "--------------------"
 read_list(myList)
