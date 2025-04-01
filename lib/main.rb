@@ -26,13 +26,11 @@ def read_list(list)
   puts "List Size: #{list.size}"
   puts "List Head: #{list.head.value}"
   puts "List Tail: #{list.tail.value}"
-  puts "1st: #{list.at(0).value}"
-  puts "2nd: #{list.at(1).value}"
-  puts "3rd: #{list.at(2).value}"
-  puts "4th: #{list.at(3).value}"
-  puts "5th: #{list.at(4).value}"
-  puts "6th: #{list.at(5).value}"
-  puts "7th: #{list.at(6).value}"
+  count = 0
+  list.size.times do
+    puts "Number #{count + 1}: #{list.at(count).class == String ? list.at(count) : list.at(count).value}"
+    count += 1
+  end
 end
 
 # prepend_list(myList)
