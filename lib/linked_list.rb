@@ -9,21 +9,27 @@ class LinkedList
     @tail
   end
 
-  def append(value, next_node = nil)
-  @size += 1
-  @tail = Node.new(value)
-  @head = @head ? @head : @tail
+  def append(value)
+    @size += 1
+    if @tail
+      temp = @tail
+      @tail = Node.new(value)
+      temp.next_node = @tail
+    else
+      @tail = Node.new(value)
+    end
+    @head = @head ? @head : @tail
   end
 
   def prepend(value)
-  @size += 1
-  if @head
-    temp = @head
-    @head = Node.new(value, temp)
-  else
-    @head = Node.new(value)
-  end
-  @tail = @tail ? @tail : @head
+    @size += 1
+    if @head
+      temp = @head
+      @head = Node.new(value, temp)
+    else
+      @head = Node.new(value)
+    end
+    @tail = @tail ? @tail : @head
   end
 
   def size
@@ -31,14 +37,17 @@ class LinkedList
   end
 
   def head
-    @head.value
+    @head ? @head.value : "List has no head"
   end
 
   def tail
-    @tail.value
+    @tail ? @tail.value : "List has no tail"
   end
 
   def at(index)
+    if !@head
+      return "List is empty"
+    end
     counter = 0
     current_node = @head
     while counter < index do
