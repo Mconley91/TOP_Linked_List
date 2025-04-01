@@ -32,14 +32,6 @@ class LinkedList
     @tail = @tail ? @tail : @head
   end
 
-  def head
-    @head ? @head : "List has no head"
-  end
-
-  def tail
-    @tail ? @tail : "List has no tail"
-  end
-
   def at(index)
     if !@head
       return "List is empty"
