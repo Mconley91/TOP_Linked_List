@@ -37,11 +37,11 @@ class LinkedList
   end
 
   def head
-    @head ? @head.value : "List has no head"
+    @head ? @head : "List has no head"
   end
 
   def tail
-    @tail ? @tail.value : "List has no tail"
+    @tail ? @tail : "List has no tail"
   end
 
   def at(index)
@@ -55,13 +55,18 @@ class LinkedList
       counter += 1
     end
     if current_node 
-      current_node.value
+      current_node
     else
       "No value at index"
     end
   end
 
   def pop
+    temp = @tail
+    self.at(@size - 2).next_node = nil
+    @tail = self.at(@size - 2)
+    @size -= 1
+    temp
   end
 
   def contains?(value)
