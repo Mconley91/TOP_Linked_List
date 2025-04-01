@@ -32,10 +32,6 @@ class LinkedList
     @tail = @tail ? @tail : @head
   end
 
-  def size
-    @size
-  end
-
   def head
     @head ? @head : "List has no head"
   end
