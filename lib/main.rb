@@ -33,4 +33,5 @@ end
 
 # prepend_list(myList)
 append_list(myList)
-read_list(myList) 
+
+p myList.to_s

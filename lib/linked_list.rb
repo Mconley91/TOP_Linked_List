@@ -81,9 +81,33 @@ class LinkedList
   end
 
   def to_s
+    counter = 0
+    current_node = @head
+    arr = []
+    while counter < @size do
+        arr.push("(#{current_node.value}) -> ")
+        current_node = current_node.next_node
+        counter += 1
+    end
+    arr.join()
   end
 
   def insert_at(value, index)
+    counter = 0
+    current_node = @head
+    while counter < index - 1 do
+        current_node = current_node.next_node
+        counter += 1
+    end
+    if index == 0
+      @head = Node.new(value, current_node)
+      @size += 1
+      return
+    end
+    temp = current_node
+    current_node = Node.new(value, temp.next_node)
+    temp.next_node = current_node
+    @size += 1
   end
 
   def remove_at(index)
