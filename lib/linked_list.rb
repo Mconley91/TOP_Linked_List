@@ -85,9 +85,11 @@ class LinkedList
     current_node = @head
     arr = []
     while counter < @size do
+      if current_node
         arr.push("(#{current_node.value}) -> ")
         current_node = current_node.next_node
-        counter += 1
+      end
+      counter += 1
     end
     arr.join()
   end
@@ -111,6 +113,13 @@ class LinkedList
   end
 
   def remove_at(index)
+    counter = 0
+    current_node = @head
+    while counter < index - 1 do
+        current_node = current_node.next_node
+        counter += 1
+    end
+    current_node.next_node = current_node.next_node.next_node
   end
 
 end

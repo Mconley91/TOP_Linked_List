@@ -33,5 +33,6 @@ end
 
 # prepend_list(myList)
 append_list(myList)
-
+p myList.to_s
+myList.remove_at(1)
 p myList.to_s
