@@ -119,7 +119,13 @@ class LinkedList
         current_node = current_node.next_node
         counter += 1
     end
+    if index == 0
+      @head = current_node.next_node
+      @size -= 1
+      return
+    end
     current_node.next_node = current_node.next_node.next_node
+    @size -= 1
   end
 
 end

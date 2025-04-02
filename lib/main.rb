@@ -2,37 +2,16 @@ require "./lib/linked_list.rb"
 
 myList = LinkedList.new
 
-def prepend_list(list)
-  list.prepend('Mario')
-  list.prepend('Link')
-  list.prepend('Bomberman')
-  list.prepend('Samus')
-  list.prepend('Starfox')
-  list.prepend('Marth')
-  list.prepend('Ganondorf')
-end
-
 def append_list(list)
-  list.append('Mario')
-  list.append('Link')
-  list.append('Bomberman')
-  list.append('Samus')
-  list.append('Starfox')
-  list.append('Marth')
-  list.append('Ganondorf')
+  list.append('One')
+  list.append('Two')
+  list.append('Three')
+  list.append('Four')
+  list.append('Five')
+  list.append('Six')
+  list.append('Seven')
 end
 
-def read_list(list)
-  count = 0
-  list.size.times do
-    puts "Number #{count + 1}: #{list.at(count).value}"
-    count += 1
-  end
-  puts "--------------------"
-end
-
-# prepend_list(myList)
 append_list(myList)
-p myList.to_s
-myList.remove_at(1)
-p myList.to_s
+
+puts myList.to_s
