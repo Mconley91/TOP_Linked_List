@@ -33,9 +33,6 @@ class LinkedList
   end
 
   def at(index)
-    if !@head
-      return "List is empty"
-    end
     counter = 0
     current_node = @head
     while counter < index do
@@ -56,9 +53,6 @@ class LinkedList
   end
 
   def contains?(value)
-    if !@head
-      return "List is empty"
-    end
     counter = 0
     current_node = @head
     while counter < @size do
@@ -73,6 +67,17 @@ class LinkedList
   end
 
   def find(value)
+    counter = 0
+    current_node = @head
+    while counter < @size do
+      if current_node.value.downcase == value.downcase
+        return counter
+      else
+        current_node = current_node.next_node
+        counter += 1
+      end
+    end
+    nil
   end
 
   def to_s
