@@ -44,8 +44,6 @@ class LinkedList
     end
     if current_node 
       current_node
-    else
-      "No value at index"
     end
   end
 
@@ -58,6 +56,20 @@ class LinkedList
   end
 
   def contains?(value)
+    if !@head
+      return "List is empty"
+    end
+    counter = 0
+    current_node = @head
+    while counter < @size do
+      if current_node.value.downcase == value.downcase
+        return true
+      else
+        current_node = current_node.next_node
+        counter += 1
+      end
+    end
+    false
   end
 
   def find(value)

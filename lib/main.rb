@@ -34,8 +34,8 @@ end
 # prepend_list(myList)
 append_list(myList)
 read_list(myList) 
-myList.pop
-myList.pop
-myList.pop
-myList.pop
-read_list(myList)
+# myList.pop
+# myList.pop
+# myList.pop
+# myList.pop
+# read_list(myList)
