@@ -91,6 +91,7 @@ class LinkedList
       end
       counter += 1
     end
+    arr << 'nil'
     arr.join()
   end
 
